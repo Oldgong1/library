@@ -5,7 +5,7 @@
         <h1>List of Speakers</h1>
         {% for speech in speaker  %}
         <div>
-            <p> <strong>{{ speech.first_name}}</strong></p>
+            <p> <a href="{{ book.get_absolute_url }}"><strong>{{ speech.first_name}}</strong> </a></p>
             <p>{{speech.date_of_birth}}</p>
             </div> 
  

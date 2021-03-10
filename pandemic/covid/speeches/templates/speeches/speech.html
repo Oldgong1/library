@@ -6,7 +6,7 @@
         
         {% for speech in speak  %}
         <div>
-            <h3> {{ speech.title }} </h3>
+            <a href="{{ speech.get_absolute_url }}"> <h3> {{ speech.title }} </h3></a>
             <p > {{ speech.date}} </p>
             <p>{{ speech.body}}</p><a href="{{ speech.link }}">View more</a>
             </div> 

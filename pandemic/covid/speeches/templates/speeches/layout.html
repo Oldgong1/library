@@ -17,8 +17,15 @@
         <a href="{% url 'speeches:index' %}">Home</a>
         <a href="{% url 'speeches:speech' %}">Speeches</a>
         <a href="{% url 'speeches:speaker' %}">Speakers</a>
-        <a href="">Logout</a>
-    </div>    
+        <a href="{% url 'logout'%}">Logout</a>
+    </div>
+    {% if user.is_authenticated %}
+    <li>User: {{ user.get_username }}</li>
+    <li><a href="{% url 'logout'%}?next={{request.path}}">Logout</a></li>
+  {% else %}
+    <li><a href="{% url 'login'%}?next={{request.path}}">Login</a></li>
+  {% endif %} 
+
 
     <div class="body">    
         {% block body %}
