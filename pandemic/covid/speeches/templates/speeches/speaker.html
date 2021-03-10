@@ -1,0 +1,16 @@
+{% extends "speeches/layout.html" %}
+{% load static %}
+
+    {% block body %}
+        <h1>List of Speakers</h1>
+        {% for speech in speaker  %}
+        <div>
+            <p> <strong>{{ speech.first_name}}</strong></p>
+            <p>{{speech.date_of_birth}}</p>
+            </div> 
+ 
+        {% endfor %}
+        
+
+    {% endblock %}
+    
